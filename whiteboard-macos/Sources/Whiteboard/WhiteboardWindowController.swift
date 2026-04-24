@@ -1,10 +1,10 @@
 import AppKit
 import SwiftUI
+import WhiteboardCore
 
 final class WhiteboardWindowController: NSWindowController {
     convenience init(model: DrawingModel) {
-        let contentView = WhiteboardView(model: model)
-        let hosting = NSHostingController(rootView: contentView)
+        let hosting = NSHostingController(rootView: WhiteboardView(model: model))
         let window = NSWindow(contentViewController: hosting)
         window.title = "Whiteboard"
         window.setContentSize(NSSize(width: 1280, height: 800))

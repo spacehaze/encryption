@@ -14,6 +14,32 @@ npm run build
 
 The built entrypoint is `dist/index.js`.
 
+## Test
+
+```sh
+npm test
+```
+
+Uses Node's built-in test runner (`node --test`) against compiled output in
+`dist-test/`. Tests cover tool→command translation, JSON-Schema generation
+for the MCP handshake, and the HTTP client (with a stub `fetch`). Node 20+
+is required.
+
+## Layout
+
+```
+src/
+  tools.ts        tool registry, Zod schemas, toolToCommand()
+  jsonschema.ts   zod -> JSON Schema for the MCP handshake
+  client.ts       HTTP client that POSTs to the app
+  server.ts       builds the MCP Server wired to a client
+  index.ts        bin entrypoint: stdio transport + real client
+test/
+  tools.test.ts
+  jsonschema.test.ts
+  client.test.ts
+```
+
 ## Register with Claude Desktop
 
 Edit `~/Library/Application Support/Claude/claude_desktop_config.json`:

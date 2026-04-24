@@ -1,29 +1,38 @@
 # Whiteboard (macOS)
 
-A native macOS whiteboard app you can launch from the menu bar. It opens a
-white canvas (optionally fullscreen) and exposes a tiny local HTTP API so
-Claude — via the `whiteboard-mcp` bridge — can draw on it while you talk.
+Native macOS whiteboard app, launched from the menu bar. Opens a white canvas
+(optionally fullscreen) and exposes a tiny local HTTP API so Claude — via
+the `whiteboard-mcp` bridge — can draw on it while you talk.
 
-## What's here so far
+## Layout
 
-- Menu bar item "Whiteboard" with Show / Fullscreen / Clear / Quit.
-- SwiftUI `Canvas` renderer for strokes, lines, rects, ellipses, circles,
-  freehand paths, and text.
-- Loopback HTTP command server on `127.0.0.1:7017` (`POST /command`,
-  `POST /commands`, `GET /health`).
-- Voice button wired to `SFSpeechRecognizer` (entitlements + Info.plist
-  strings in place; real streaming transcription is stubbed — see
-  `VoiceController.swift`).
+```
+Sources/
+  WhiteboardCore/   pure, testable logic (Geometry, RGBA, DrawCommand,
+                    DrawingModel, IncomingCommand, HTTP parse, CommandRouter)
+  Whiteboard/       AppKit/SwiftUI shell + Network.framework listener
+Tests/
+  WhiteboardCoreTests/  XCTest suite over WhiteboardCore
+```
+
+The split keeps everything testable without AppKit. `Whiteboard` contains
+only what actually needs `NSApplication`, `SwiftUI`, or `NWListener`.
 
 ## Build
 
-Requires macOS 13+ and Xcode 15+ (or the matching Swift 5.9 toolchain).
+Requires macOS 13+ and a Swift 5.9 toolchain.
 
 ```sh
 cd whiteboard-macos
 make           # builds build/Whiteboard.app (Debug)
 make release   # Release build
 make run       # build + open the .app
+```
+
+## Test
+
+```sh
+swift test
 ```
 
 ## Command protocol
@@ -37,7 +46,7 @@ make run       # build + open the .app
 
 Coordinates default to the **normalized** space (`0..1` of the canvas). Pass
 `"coords": "absolute"` to use pixels. See
-`Sources/Whiteboard/IncomingCommand.swift` for the full schema.
+`Sources/WhiteboardCore/IncomingCommand.swift` for the full schema.
 
 ## Wiring Claude
 
