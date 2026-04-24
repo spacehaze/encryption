@@ -1,0 +1,25 @@
+{
+  "name": "whiteboard-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that lets Claude draw on the Whiteboard macOS app.",
+  "type": "module",
+  "bin": {
+    "whiteboard-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
