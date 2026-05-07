@@ -27,7 +27,7 @@ struct ContentView: View {
                     .padding(.bottom, 12)
             }
             .padding(.top)
-            .navigationTitle("Chordbot2")
+            .navigationTitle("Chordmate")
             .background(Color(.systemBackground))
             .sheet(item: $sheet) { target in
                 editor(for: target)

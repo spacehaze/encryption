@@ -1,4 +1,4 @@
-# Chordbot2
+# Chordmate
 
 A SwiftUI recreation of [Chordbot](https://chordbot.com), built as a personal
 learning project. Native iOS, no source-code access — observed behavior only.
@@ -43,7 +43,7 @@ You need: macOS, Xcode 15+, ~50 MB free disk for the SoundFont.
 # 2a. Generate the Xcode project (recommended).
 brew install xcodegen        # if you don't have it
 xcodegen generate
-open Chordbot2.xcodeproj
+open Chordmate.xcodeproj
 
 # 2b. Or set it up manually — see "Manual Xcode setup" below.
 
@@ -58,12 +58,12 @@ launch creates `Progression.demo` (C → Am → F → G).
 
 If you'd rather not install XcodeGen:
 
-1. **File → New → Project → iOS → App**, product name `Chordbot2`,
+1. **File → New → Project → iOS → App**, product name `Chordmate`,
    interface SwiftUI, language Swift, minimum iOS 17.0.
 2. Delete the auto-generated `ContentView.swift` and `*App.swift` files.
 3. Drag the folders **`App`, `Audio`, `Models`, `State`, `Views`** from this
    repo into the Xcode project navigator. In the dialog, choose *Create
-   groups* and add to the `Chordbot2` target.
+   groups* and add to the `Chordmate` target.
 4. Drag **`Audio/Resources/GeneralUser-GS.sf2`** in too — verify it's listed
    under *Build Phases → Copy Bundle Resources*.
 5. Build & run.
