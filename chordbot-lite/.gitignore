@@ -1,0 +1,22 @@
+# Xcode
+build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+
+# Swift Package Manager
+.build/
+Package.resolved
+.swiftpm/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# SoundFonts (large binary; download on first build)
+Audio/Resources/*.sf2
