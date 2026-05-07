@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "ChordbotLite",
+    name: "Chordmate",
     platforms: [.iOS(.v17), .macOS(.v14)],
     products: [
         .library(name: "MusicTheory", targets: ["MusicTheory"]),

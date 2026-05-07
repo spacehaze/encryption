@@ -4,7 +4,6 @@ The app expects a SoundFont file named **`GeneralUser-GS.sf2`** in this folder
 at build time. The file is gitignored (~30 MB) — fetch it once with:
 
 ```sh
-cd chordbot-lite
 ./Scripts/fetch-soundfont.sh
 ```
 

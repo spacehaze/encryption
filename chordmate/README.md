@@ -1,4 +1,4 @@
-# Chordbot-Lite
+# Chordmate
 
 A SwiftUI recreation of [Chordbot](https://chordbot.com), built as a personal
 learning project. Native iOS, no source-code access — observed behavior only.
@@ -18,7 +18,7 @@ song library, MIDI import.
 ## Project layout
 
 ```
-chordbot-lite/
+.
 ├── App/             # @main entry, AppState injection
 ├── Audio/           # AVAudioEngine + sampler + sequencer
 │   └── Resources/   # SoundFont (gitignored, fetched on first build)
@@ -38,13 +38,12 @@ You need: macOS, Xcode 15+, ~50 MB free disk for the SoundFont.
 
 ```sh
 # 1. Fetch the SoundFont (one-time, ~30 MB).
-cd chordbot-lite
 ./Scripts/fetch-soundfont.sh
 
 # 2a. Generate the Xcode project (recommended).
 brew install xcodegen        # if you don't have it
 xcodegen generate
-open ChordbotLite.xcodeproj
+open Chordmate.xcodeproj
 
 # 2b. Or set it up manually — see "Manual Xcode setup" below.
 
@@ -59,12 +58,12 @@ launch creates `Progression.demo` (C → Am → F → G).
 
 If you'd rather not install XcodeGen:
 
-1. **File → New → Project → iOS → App**, product name `ChordbotLite`,
+1. **File → New → Project → iOS → App**, product name `Chordmate`,
    interface SwiftUI, language Swift, minimum iOS 17.0.
 2. Delete the auto-generated `ContentView.swift` and `*App.swift` files.
-3. Drag the four folders **`App`, `Audio`, `Models`, `State`, `Views`** from
-   this repo into the Xcode project navigator. In the dialog, choose *Create
-   groups* and add to the `ChordbotLite` target.
+3. Drag the folders **`App`, `Audio`, `Models`, `State`, `Views`** from this
+   repo into the Xcode project navigator. In the dialog, choose *Create
+   groups* and add to the `Chordmate` target.
 4. Drag **`Audio/Resources/GeneralUser-GS.sf2`** in too — verify it's listed
    under *Build Phases → Copy Bundle Resources*.
 5. Build & run.
