@@ -1,12 +1,12 @@
-# XcodeGen spec — generates Chordmate.xcodeproj from this layout.
+# XcodeGen spec — generates Chordbot2.xcodeproj from this layout.
 #
 # Install once:  brew install xcodegen
 # Generate:      xcodegen generate
-# Open:          open Chordmate.xcodeproj
+# Open:          open Chordbot2.xcodeproj
 #
 # Manual setup is also fine — see README.md "Manual Xcode setup" section.
 
-name: Chordmate
+name: Chordbot2
 options:
   bundleIdPrefix: com.spacehaze
   deploymentTarget:
@@ -20,7 +20,7 @@ settings:
     ENABLE_USER_SCRIPT_SANDBOXING: NO
 
 targets:
-  Chordmate:
+  Chordbot2:
     type: application
     platform: iOS
     sources:
@@ -33,12 +33,12 @@ targets:
           - "Resources/README.md"
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.spacehaze.chordmate
+        PRODUCT_BUNDLE_IDENTIFIER: com.spacehaze.chordbot2
         TARGETED_DEVICE_FAMILY: "1,2"
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
-        INFOPLIST_KEY_CFBundleDisplayName: Chordmate
+        INFOPLIST_KEY_CFBundleDisplayName: Chordbot2
 
 # Tests live in Tests/MusicTheoryTests and run against the Package.swift
 # library: `swift test` from the repo root. They aren't wired into the iOS

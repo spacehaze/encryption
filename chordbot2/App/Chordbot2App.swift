@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct ChordmateApp: App {
+struct Chordbot2App: App {
     @State private var state = AppState()
 
     var body: some Scene {

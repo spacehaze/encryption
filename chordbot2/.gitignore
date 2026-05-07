@@ -7,7 +7,7 @@ DerivedData/
 *.xcuserdatad/
 
 # XcodeGen output (regenerated from project.yml)
-Chordmate.xcodeproj/
+Chordbot2.xcodeproj/
 
 # Swift Package Manager
 .build/
