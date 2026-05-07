@@ -1,7 +1,7 @@
 import Foundation
 
 /// A pitch class (the twelve notes of an octave), independent of register.
-public enum Note: Int, CaseIterable, Sendable, Hashable {
+public enum Note: Int, CaseIterable, Sendable, Hashable, Codable {
     case c = 0, cSharp, d, dSharp, e, f, fSharp, g, gSharp, a, aSharp, b
 
     public var displayName: String {

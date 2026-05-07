@@ -1,7 +1,7 @@
 import Foundation
 
 /// Chord quality — the interval pattern stacked on top of the root.
-public enum Quality: String, CaseIterable, Sendable, Hashable {
+public enum Quality: String, CaseIterable, Sendable, Hashable, Codable {
     case major
     case minor
     case dominant7

@@ -2,7 +2,7 @@ import Foundation
 
 /// An ordered sequence of chords with a tempo and a uniform duration per chord.
 /// Sections, time-signature changes, and per-chord durations are deferred.
-public struct Progression: Equatable, Hashable, Sendable {
+public struct Progression: Equatable, Hashable, Sendable, Codable {
     public var chords: [Chord]
     public var bpm: Double
     public var beatsPerChord: Int

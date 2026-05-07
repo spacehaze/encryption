@@ -2,7 +2,7 @@ import Foundation
 
 /// A chord at the abstract level: a root pitch class plus a quality.
 /// Voicing/register is decided at playback time via `midiNotes(octave:)`.
-public struct Chord: Identifiable, Equatable, Hashable, Sendable {
+public struct Chord: Identifiable, Equatable, Hashable, Sendable, Codable {
     public let id: UUID
     public var root: Note
     public var quality: Quality
